@@ -94,11 +94,9 @@ def map(iterable, function):
         yield function(x)
 
 
-
 def zipWith(iterable1, iterable2, function):
     for x, y in zip(iterable1, iterable2):
         yield function(x, y)
-
 
 
 def reduce(iterable, function):
@@ -115,10 +113,8 @@ def negList(li):
     return map(li, neg)
 
 
-
 def addLists(li1, li2):
     return zipWith(li1, li2, add)
-
 
 
 def sum(li):
@@ -126,7 +122,6 @@ def sum(li):
     if res is None:
         res = 0
     return res
-
 
 
 def prod(li):
