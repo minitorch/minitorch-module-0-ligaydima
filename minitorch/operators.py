@@ -44,9 +44,6 @@ def relu(a):
     return max(a, 0)
 
 
-import math
-
-
 def log(a):
     return math.log(a)
 
@@ -89,17 +86,17 @@ def inv_back(a, b):
 
 # TODO: Implement for Task 0.1.
 
-def map(iterable, function):
+def map(iterable: Iterable, function: Callable):
     for x in iterable:
         yield function(x)
 
 
-def zipWith(iterable1, iterable2, function):
+def zipWith(iterable1: Iterable, iterable2: Iterable, function: Callable):
     for x, y in zip(iterable1, iterable2):
         yield function(x, y)
 
 
-def reduce(iterable, function):
+def reduce(iterable: Iterable, function: Callable):
     res = None
     for x in iterable:
         if res is None:
@@ -109,22 +106,22 @@ def reduce(iterable, function):
     return res
 
 
-def negList(li):
+def negList(li: Iterable):
     return map(li, neg)
 
 
-def addLists(li1, li2):
+def addLists(li1: Iterable, li2: Iterable):
     return zipWith(li1, li2, add)
 
 
-def sum(li):
+def sum(li: Iterable):
     res = reduce(li, add)
     if res is None:
         res = 0
     return res
 
 
-def prod(li):
+def prod(li: Iterable):
     res = reduce(li, mul)
     if res is None:
         res = 1
